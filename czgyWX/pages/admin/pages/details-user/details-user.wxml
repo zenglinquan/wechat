@@ -1,0 +1,68 @@
+<form catchsubmit="commitForm">
+  <view class="group-header" wx:if="{{editDisplay}}">
+    <text>上次更新的时间为：{{userData.createDate}}</text>
+  </view>
+  <view class="container container-gray">
+    <view class="group">
+      <view class="group-header"> </view>
+      <view class="group-body">
+        <view class="input-list">
+
+          <view class="input-item">
+            <text class="input-item-label">用户名称:</text>
+            <view class="input-item-content">
+              <input type="text" disabled="{{inputDisabled}}" placeholder="请输入用户名称" bindinput="nameChange" name="userName" value="{{userData.userName}}"></input>
+            </view>
+          </view>
+
+          <view class="input-item">
+            <text class="input-item-label">用户密码:</text>
+            <view class="input-item-content" style="position: relative;">
+
+              <input password="{{passwordType}}" disabled="{{inputDisabled}}" placeholder="请输入用户密码" bindinput="passwordChange" name="password" value="{{userData.password}}">
+
+              </input>
+              <image src="../../images/eye.png" mode="aspectFit" bindtap="passwordEye"></image>
+            </view>
+          </view>
+          <view class="input-item" wx:if="{{editDisplay?false:true}}">
+            <text class="input-item-label">确认密码:</text>
+            <view class="input-item-content" style="position: relative;">
+              <input password="{{confirmType}}" disabled="{{inputDisabled}}" placeholder="请输入确认密码" bindchange="confirmPasswordChange" name="confirmPassword" value="{{userData.confirmPassword}}">
+              </input>
+              <image src="../../images/eye.png" mode="aspectFit" bindtap="confirmEye"></image>
+            </view>
+          </view>
+
+          <view class="input-item">
+            <text class="input-item-label">用户角色:</text>
+            <picker bindchange="bindProductVersionPickerChange" disabled="{{inputDisabled}}" value="{{rolePickerIndex}}" range="{{roleNameArray}}" name="roleName">
+              <view class="picker">
+                {{roleNameArray[rolePickerIndex]}}
+              </view>
+            </picker>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <view style="height:60px"></view>
+  <view class="detail-nav">
+
+    <button disabled="{{buttonDisabled}}" wx:if="{{submitDisplay}}" class="button-organge" style="width:100%" formType="submit" id="submitForm" data-text="submit">提交</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{editDisplay}}" class="button-green" style="width:100%" bindtap="editButton" id="edit" data-text="edit">编辑</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{deleteDisplay}}" class="button-red" style="width:50%" bindtap="showComfirModal" id="{{userData.guid}}" data-text="delete">删除</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{saveDisplay}}" class="button-organge" style="width:50%" formType="submit" id="{{userData.guid}}" data-text="save">保存</button>
+  </view>
+
+</form>
+<view wx:if="{{confirmodalDisplay}}">
+  <modal title="提示" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="showComfirModal">确定要执行本次操作？</modal>
+</view>
+<view wx:if="{{tipComfirmModalDisplay}}">
+  <modal title="提示" no-cancel="true" bindconfirm="tipModalBindaconfirm">输入框不能为空</modal>
+</view>

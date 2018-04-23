@@ -1,0 +1,51 @@
+<!--orders.wxml-->
+<view style="height:60px"></view>
+<view class="flex-top">
+  
+    <view class="search-container">
+      <input type="text" bindinput="searchInputChange" placeholder="输入出库号搜索"></input>
+      <icon bindtap="searchOutstock" type="search" size="20" />
+    </view>
+  
+</view>
+<view class="card" bindtap="details" wx:for="{{removalInventoryDatas}}" wx:key="item.id" data-text="{{item.guid}}">
+    <view>
+       <view>
+       <view class='td' style='width:100%'>出库单号{{item.outCode}}</view> 
+       </view>
+    </view>
+    <view class="line"></view>
+  <view class="tr">
+    <view class="td" style="width:20%">出库{{index+1}}</view>
+    <view class="td" style="width:30%">{{item.user.userName}}</view>
+    <view class="td">{{item.createDate}}</view>
+  </view>
+  <view class="line"></view>
+  <view class="table">
+    <block>
+      <view class='tr'>
+        
+      </view>
+      <view class="tr">
+        <view class="td">产品名称</view>
+        <view class="td">产品型号</view>
+        <view class="td">产品类型</view>
+        <view class="td">数量</view>
+      </view>
+      <view class="line"></view>
+      <view class="tr">
+        <view class="td">{{item.productName}}</view>
+        <view class="td">{{item.productVersion}}</view>
+        <view class="td">{{item.categoryObject.categoryName}}</view>
+        <view class="td">{{item.quantity}}</view>
+      </view>
+    </block>
+  </view>
+  
+</view>
+<view style="height:100px"></view>
+<view class="flex-buttom" style="margin-bottom:50px">
+  <button style="color:#69c3aa;height:50px" bindtap="addRemovalInventory">新增出库</button>
+</view>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;" bindtap="logout">退出登入</button>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;right:0" bindtap="opendManager">后台管理</button>

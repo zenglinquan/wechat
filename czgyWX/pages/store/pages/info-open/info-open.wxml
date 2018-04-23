@@ -1,0 +1,26 @@
+<!-- 头部部分 -->
+<view class="top">
+  <view class="top1">
+    <text>信息公开</text>
+  </view>
+  <view class="top2">
+    <text>2016-12-22  </text>
+    <text>美铂拉生活用品厂  </text>
+    <text>营业执照</text>
+  </view>
+</view>
+
+
+<view class="content">
+  <view class="content_img">
+    <image class="content_img" mode='widthFix' src="../../images/cert.jpg"></image>
+  </view>
+  <!-- <view class="content_img">
+    <image src="../../images/xuke2.jpg"></image>
+  </view>
+  <view class="content_img">
+    <image src="../../images/xuke3.jpg"></image>
+  </view> -->
+ 
+
+</view>

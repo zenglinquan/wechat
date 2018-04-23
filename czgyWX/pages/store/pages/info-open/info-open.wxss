@@ -1,0 +1,31 @@
+page{
+  font-family: "微软雅黑";
+}
+ /* 头部部分 */
+.top{
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.top1{
+  font-size: 14px;
+  color: #666;
+}
+.top2{
+  padding-top: 10px;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.content{
+  margin: 0;
+}
+
+image {
+width:90%;
+height:240px;
+display:inline-block;
+overflow:hidden;
+margin-left:10px;
+
+}
+

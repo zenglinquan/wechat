@@ -1,0 +1,28 @@
+<view class="container">
+
+  <view class="touch-item {{role.isTouchMove ? 'touch-move-active' : ''}}" wx:for-item="role" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{roleData}}" wx:key="{{item.id}}">
+    <view class="content" bindtap="details" data-id="{{role.roleGuid}}" >
+      <input type="text" bindinput="roleNameInputChange" disabled="{{role.inputDisabled}}" placeholder="请输入角色名称" value="{{role.roleName}}"></input>
+      <checkbox-group bindchange="checkboxChange">
+        <view wx:for-index="autId" style="width:40%;float:left" class="checkbox" wx:for="{{role.authorizeData}}" wx:for-item="authorize" wx:key="{{authorize.id}}">
+          <checkbox disabled="{{authorize.checkedDisabled}}" value="{{authorize.id}}" checked="{{authorize.checked}}">
+          {{authorize.authorityName}}
+          </checkbox>
+        </view>
+      </checkbox-group>
+      <button  wx:if="{{role.overDispled}}" class="over-button" bindtap="over" data-id="{{index}}" >添加</button>
+    </view>
+    <view hidden="{{hidden}}" class="del" catchtap="del" data-id="{{index}}" data-text="{{role.roleGuid}}">删除</view>
+
+    
+
+  </view>
+</view>
+<!--{{item.content}}-->
+<view style="height:40px"></view>
+<view class="detail-nav">
+  <view class="line_nav"></view>
+  <button style="color:#69c3aa;width:100%;" bindtap="add" formType="submit">新增角色
+  </button>
+
+</view>

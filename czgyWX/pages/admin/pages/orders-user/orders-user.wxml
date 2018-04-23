@@ -1,0 +1,40 @@
+<view style="height:60px"></view>
+<view class="flex-top">
+  <view class="search-container">
+    <input type="text" bindinput="searchInputChange" placeholder="输入订购人姓名搜索"></input>
+    <icon bindtap="searchOrders" type="search" size="20" />
+  </view>
+</view>
+<view class="card" bindtap="details" wx:for="{{orderUserDatas}}" wx:key="{{index}}" data-text="{{item.orderUserGuid}}">
+
+  <view class="ma">
+    <text>订购人{{index}}</text>
+  </view>
+   <view class="line"></view>
+  <view class="table">
+    <block>
+    <view class="tr">
+        <view class="td">用户名</view>
+        <view class="td">{{item.contactPerson}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">电话</view>
+        <view class="td">{{item.telephone}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">单位地址</view>
+        <view class="td">{{item.address}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">供货时间</view>
+        <view class="td">{{item.supplyDate}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view style="height:100px"></view>
+<view class="flex-buttom" style="margin-bottom:50px;">
+  <button style="color:#69c3aa;height:50px;width:100%;" bindtap="addOrdersUser">新增订购人</button>
+</view>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa" bindtap="opendManager">后台管理</button>

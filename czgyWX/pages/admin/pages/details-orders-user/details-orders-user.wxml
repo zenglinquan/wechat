@@ -1,0 +1,101 @@
+<form catchsubmit="commitForm">
+
+  <view class="container container-gray">
+    <view class="group">
+      <view class="group-header"> </view>
+      <view class="group-body">
+        <view class="input-list">
+
+          <view class="input-item">
+            <text class="input-item-label">订购人:</text>
+            <view class="input-item-content">
+              <input type="text" name="contactPerson" disabled="{{inputDisabled}}" placeholder="订购人" bindinput="contactPersonChange" value="{{orderUserData.contactPerson}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">单位名称:</text>
+            <view class="input-item-content">
+              <input type="text" name="organization" disabled="{{inputDisabled}}" placeholder="单位名称" bindinput="organizationChange" value="{{orderUserData.organization}}"></input>
+            </view>
+          </view>
+
+          <view class="input-item">
+            <text class="input-item-label">供货时间:</text>
+
+
+            <view class="supplyPicker">
+              <text>日期:</text>
+              <picker mode="date" value="{{date}}" start="{{pickerStartDate}}" bindchange="bindDateChange">
+                <view class="date">{{date}}</view>
+              </picker>
+              <text>时间:</text>
+              <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+                <view class="time">{{time}}</view>
+              </picker>
+            </view>
+
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">收货地址:</text>
+            <view class="input-item-content">
+              <input type="text" name="address" disabled="{{inputDisabled}}" placeholder="收货地址" bindinput="addressChange" value="{{orderUserData.address}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">联系方式:</text>
+            <view class="input-item-content">
+              <input type="text" name="telephone" disabled="{{inputDisabled}}" placeholder="联系方式" bindinput="telephoneChange" value="{{orderUserData.telephone}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">开票信息:</text>
+            <view class="input-item-content">
+              <input type="text" name="billingInformation" disabled="{{inputDisabled}}" placeholder="开票信息" bindinput="billingInformationChange" value="{{orderUserData.billingInformation}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">说明:</text>
+            <view class="input-item-content">
+              <input type="text" name="detail" disabled="{{inputDisabled}}" placeholder="请输入说明" bindinput="detailChange" value="{{orderUserData.detail}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label" style="margin-top:5px;">订单号:</text>
+            <view class="search-container">
+              <input name="orderCode" type="text"  disabled="true" placeholder="点击按钮生成单号" value="{{orderUserData.orderCode}}"></input>
+              <view class="search-container-button" bindtap="generatorOrderCode">生成单号</view>
+            </view>
+            <!-- <view class="input-item-content">
+              <input type="text" name="orderCode" disabled="{{inputDisabled}}" placeholder="获取订单号" bindinput="orderCodeChange" value="{{orderUserData.orderCode}}"></input>
+            </view> -->
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">快递单号:</text>
+            <view class="input-item-content">
+              <input type="text" name="courierNumber" disabled="{{inputDisabled}}" placeholder="请输入快递单号" bindinput="courierNumberChange" value="{{orderUserData.courierNumber}}"></input>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <view style="height:60px"></view>
+  <view class="detail-nav">
+
+    <button disabled="{{buttonDisabled}}" wx:if="{{submitDisplay}}" class="button-organge" style="width:100%" formType="submit" id="submitForm" data-text="submit">提交</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{editDisplay}}" class="button-green" style="width:100%" bindtap="editButton" id="edit" data-text="edit">编辑</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{deleteDisplay}}" class="button-red" style="width:50%" bindtap="showComfirModal" id="{{orderUserData.orderUserGuid}}" data-text="delete">删除</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{saveDisplay}}" class="button-organge" style="width:50%" formType="submit" id="{{orderUserData.orderUserGuid}}" data-text="save">保存</button>
+  </view>
+
+</form>
+<view wx:if="{{confirmodalDisplay}}">
+  <modal title="提示" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="showComfirModal">确定要执行本次操作？</modal>
+</view>
+<view wx:if="{{tipComfirmModalDisplay}}">
+  <modal title="提示" no-cancel="true" bindconfirm="tipModalBindaconfirm">输入框不能为空</modal>
+</view>

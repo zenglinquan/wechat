@@ -1,0 +1,201 @@
+<form catchsubmit="commitForm">
+  <view class="group-header" wx:if="{{editDisplay}}">
+    <text>上次更新的时间为：{{orderData.createDate}}</text>
+  </view>
+  <view class="group-header" wx:if="{{editDisplay}}">
+    <text>订单号：{{orderData.orderCode}}</text>
+  </view>
+  <view class="container container-gray">
+    <view class="group">
+      <view class="group-header"> </view>
+      <view class="group-body">
+        <view class="input-list">
+
+          <view class="input-item">
+            <text class="input-item-label">产品名称:</text>
+            <view class="input-item-content">
+              <input type="text" disabled="{{inputDisabled}}" placeholder="请输入产品名称" bindinput="nameChange" name="productName" value="{{orderData.productName}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">产品类别:</text>
+            <picker bindchange="bindCategoryPickerChange" disabled="{{inputDisabled}}" value="{{categoryIndex}}" range="{{categoryNameArray}}" name="productVersion">
+              <view class="picker" style="width:300px;">
+                {{categoryNameArray[categoryIndex]}}
+              </view>
+            </picker>
+          </view>
+
+
+          <view class="input-item">
+            <text class="input-item-label">产品型号:</text>
+            <picker bindchange="bindProductVersionPickerChange" disabled="{{inputDisabled}}" value="{{productVersionIndex}}" range="{{productVersionArray}}" name="productVersion">
+              <view class="picker" style="width:300px;">
+                {{productVersionArray[productVersionIndex]}}
+              </view>
+            </picker>
+          </view>
+
+          <view style="border:2px solid;border-color:#f9f9f9;margin-top:5px">
+            <view class="group-header">材质颜色数量</view>
+
+            <view class="input-item" style="border-bottom:2px solid;border-color:#f9f9f9;background-color:#f9f9f9" wx:if="{{editDisplay? false : true}}"><text style="padding-right:10px">颜色:</text>
+              <view class="input-item-content">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{materialColorNameArray}}">
+                  <view class="picker">
+                    {{materialColorNameArray[index]}}
+                  </view>
+                </picker>
+              </view>
+              <view class="input-item-content">
+                <input type="text" bindinput="bindNumberChange" disabled="{{inputDisabled}}" placeholder="请输入商品数量" type="number" value="{{item.number}}"></input>
+              </view>
+              <view class="group-header" style="padding:0px;">
+                <button disabled="{{buttonDisabled}}" bindtap="addMaterialColor" class="button-class button-add">添加</button>
+              </view>
+            </view>
+
+
+
+            <view class="material-color input-item " wx:for="{{orderData.materialColor}}" wx:for-index="idx" wx:key="{{item.id}}">
+              <view class="input-item-content">
+                <view>{{item.color}}</view>
+              </view>
+              <view class="input-item-content">
+                <view>{{item.number}}</view>
+              </view>
+              <view wx:if="{{deleteFlag}}" style="height:33px;">
+                <button disabled="{{buttonDisabled}}" wx:if="{{editDisplay? false : true}}" class="button-class button-delete" id="{{idx}}" bindtap="deleteMaterialColor">删除</button>
+              </view>
+            </view>
+
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">产品总数:</text>
+            <view class="input-item-content">
+              <input type="text" name="quantity" disabled="true" placeholder="产品总数" value="{{orderData.quantity}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">单价:</text>
+            <view class="input-item-content">
+              <input type="number" name="price" disabled="{{inputDisabled}}" placeholder="单价" bindinput="priceChange" value="{{orderData.price}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">合计:</text>
+            <view class="input-item-content">
+              <input type="text" name="total" disabled="true" placeholder="合计" value="{{orderData.total}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <!-- <text class="input-item-label">订单状态:</text> -->
+            <view class="radio-group">
+              <label wx:for="{{orderStateRadio}}" wx:key="{{index}}" wx:for-item="orderState" bindtap="selectOrderSateOk" data-id="{{orderState.id}}">
+                <icon wx:if="{{orderState.isSelect}}" type="success" size="14"/> 
+                <icon wx:else type="circle" size="14"/>
+                <text>{{orderState.value}}</text> 
+                
+              </label>
+            </view>
+          </view>
+          <view class="line"></view>
+
+          <view class="input-item">
+            <text class="input-item-label">订购人:</text>
+            <picker bindchange="bindOrderUserPickerChange" disabled="{{inputDisabled}}" value="{{orderUserIndex}}" range="{{orderUserPicker}}" name="orderUserName">
+              <view class="picker" style="width:300px;">
+                {{orderUserPicker[orderUserIndex]}}
+              </view>
+            </picker>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">订购人:</text>
+            <view class="input-item-content">
+              <input type="text" name="contactPerson" disabled="{{inputDisabled}}" placeholder="订购人" bindinput="contactPersonChange" value="{{orderData.contactPerson}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">单位名称:</text>
+            <view class="input-item-content">
+              <input type="text" name="organization" disabled="{{inputDisabled}}" placeholder="单位名称" bindinput="organizationChange" value="{{orderData.organization}}"></input>
+            </view>
+          </view>
+
+          <view class="input-item">
+            <text class="input-item-label">供货时间:</text>
+
+
+            <view class="supplyPicker">
+              <text>日期:</text>
+              <picker mode="date" value="{{date}}" start="{{pickerStartDate}}" bindchange="bindDateChange">
+                <view class="date">{{date}}</view>
+              </picker>
+              <text>时间:</text>
+              <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+                <view class="time">{{time}}</view>
+              </picker>
+            </view>
+
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">收货地址:</text>
+            <view class="input-item-content">
+              <input type="text" name="address" disabled="{{inputDisabled}}" placeholder="请输入收货地址" bindinput="addressChange" value="{{orderData.address}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">联系方式:</text>
+            <view class="input-item-content">
+              <input type="text" name="telephone" disabled="{{inputDisabled}}" placeholder="请输入联系方式" bindinput="telephoneChange" value="{{orderData.telephone}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">开票信息:</text>
+            <view class="input-item-content">
+              <input type="text" name="billingInformation" disabled="{{inputDisabled}}" placeholder="请输入开票信息" bindinput="billingInformationChange" value="{{orderData.billingInformation}}"></input>
+            </view>
+          </view>
+          <view class="input-item" wx:if="{{!editDisplay}}">
+            <text class="input-item-label" style="margin-top:5px;">订单号:</text>
+            <view class="search-container">
+              <input name="orderCode" type="text"  disabled="true" placeholder="点击按钮生成单号" value="{{orderData.orderCode}}"></input>
+              <view class="search-container-button" bindtap="generatorOrderCode">生成单号</view>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">快递单号:</text>
+            <view class="input-item-content">
+              <input type="text" name="courierNumber" disabled="{{inputDisabled}}" placeholder="请输入快递单号" bindinput="courierNumberChange" value="{{orderData.courierNumber}}"></input>
+            </view>
+          </view>
+          <view class="input-item">
+            <text class="input-item-label">说明:</text>
+            <view class="input-item-content">
+              <input type="text" name="detail" disabled="{{inputDisabled}}" placeholder="请输入说明" bindinput="detailChange" category value="{{orderData.detail}}"></input>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <view style="height:60px"></view>
+  <view class="detail-nav">
+
+    <button disabled="{{buttonDisabled}}" wx:if="{{submitDisplay}}" class="button-organge" style="width:100%" formType="submit" id="submitForm" data-text="submit">提交</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{editDisplay}}" class="button-green" style="width:100%" bindtap="editButton" id="edit" data-text="edit">编辑</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{deleteDisplay}}" class="button-red" style="width:50%" bindtap="showComfirModal" id="{{orderData.guid}}" data-text="delete">删除</button>
+    <button disabled="{{buttonDisabled}}" wx:if="{{saveDisplay}}" class="button-organge" style="width:50%" formType="submit" id="{{orderData.guid}}" data-text="save">保存</button>
+  </view>
+
+</form>
+<view wx:if="{{confirmodalDisplay}}">
+  <modal title="提示" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="showComfirModal">确定要执行本次操作？</modal>
+</view>
+<view wx:if="{{tipComfirmModalDisplay}}">
+  <modal title="提示" no-cancel="true" bindconfirm="tipModalBindaconfirm">输入框不能为空</modal>
+</view>

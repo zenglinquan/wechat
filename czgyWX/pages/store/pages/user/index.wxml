@@ -1,0 +1,71 @@
+<!-- <import src="../../components/modal/modal.wxml"/>
+<template is="modal" data="{{...__modal__}}"/> -->
+
+<view class="profile" style='background: url("../../images/center_bg.jpg") no-repeat'>
+    <view class="avatar">
+        <image src="{{avatar}}" bindtap="toast"></image>
+    </view>
+    <view class="baseinfo">
+        {{name}}
+    </view>
+</view>
+
+<view class="panel">
+    <navigator class="panel-hd u-arrow right" url="../order/order?currentTab=0">
+        <view class="panel-hd-l"><image class="u-icon" src='../../images/center_icon_Order.jpg'/></view>
+        <view class="flex-item">全部订单</view>
+    </navigator>
+    <view class="tab no-border">
+        <navigator class="tab-item" url="../order/order?currentTab=1">
+            <image class="tab-icon u-icon" src="/images/center_icon_obligation@2x.png">
+                <i class="badge" wx:if="{{waitPayOrderCount > 0 && waitPayOrderCount < 100}}">{{waitPayOrderCount}}</i>
+                <i class="badge" wx:elif="{{waitPayOrderCount >= 100}}">···</i>
+            </image>
+            <text class="h5">待付款</text>
+        </navigator>
+        <navigator class="tab-item" url="../order/order?currentTab=2">
+            <image class="tab-icon u-icon" src="/images/center_icon_fahuo@2x.png">
+                <i class="badge" wx:if="{{waitDeliverOrderCount > 0 && waitDeliverOrderCount < 100}}">{{waitDeliverOrderCount}}</i>
+                <i class="badge" wx:elif="{{waitDeliverOrderCount >= 100}}">···</i>
+            </image>
+            <text class="h5">待发货</text>
+        </navigator>
+        <navigator class="tab-item" url="../order/order?currentTab=3">
+            <image class="tab-icon u-icon" src="/images/center_icon_shouhuo@2x.png">
+                <i class="badge" wx:if="{{waitReceiveOrderCount > 0 && waitReceiveOrderCount < 100}}">{{waitReceiveOrderCount}}</i>
+                <i class="badge" wx:elif="{{waitReceiveOrderCount >= 100}}">···</i>
+            </image>
+            <text class="h5">待收货</text>
+        </navigator>
+        <navigator class="tab-item" url="../order/order?currentTab=4">
+            <image class="tab-icon u-icon" src="/images/over.png">
+                <i class="badge" wx:if="{{waitCommentOrderCount > 0 && waitCommentOrderCount < 100}}">{{waitCommentOrderCount}}</i>
+                <i class="badge" wx:elif="{{waitCommentOrderCount >= 100}}">···</i>
+            </image>
+            <text class="h5">已完成</text>
+        </navigator>
+    </view>
+</view>
+
+<view class="ul ul-user">
+    
+    <navigator class="li u-arrow right" url="../favorite/favorite">
+        <view class="li-hd"><image src="/images/center_icon_evaluation@2x.png" class="u-icon"></image></view>
+        <view class="li-bd">我的收藏</view>
+        <view class="li-ft"><text class="txt-gray">{{favoriteCount}}</text></view>
+    </navigator>
+    <navigator class="li u-arrow right" url="../manageaddress/manageaddress">
+        <view class="li-hd"><image src="/images/ic_position_dark@2x.png" class="u-icon"></image></view>
+        <view class="li-bd">收货地址</view>
+    </navigator>
+    <button class="kf_button" open-type="contact" session-from="weapp">
+      <image class="kf_image" src="../../images/kf.png"></image>
+    </button>
+    <!-- <navigator class="li u-arrow right" url="../addaddress/addaddress">
+        <view class="li-hd"><image src="/images/center_icon_Customer-service@2x.png" class="u-icon"></image></view>
+        <view class="li-bd">在线客服</view>
+    </navigator> -->
+</view>
+
+
+

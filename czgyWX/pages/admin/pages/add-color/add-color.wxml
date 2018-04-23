@@ -1,0 +1,20 @@
+<view class="container">
+
+  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{materialColorDatas}}" wx:key="{{item.id}}">
+    <view class="content">
+      <input type="text" bindinput="materialColorInputChange" disabled="{{item.inputDisabled}}"placeholder="材质颜色" value="{{item.materialColorName}}"></input>
+    </view>
+    <view hidden="{{hidden}}" class="del" catchtap="del" data-id="{{index}}" data-text="{{item.id}}">删除</view>
+
+      <button wx:if="{{item.overDispled}}" class="over-button" bindtap="over" data-id="{{index}}">添加</button>
+
+  </view>
+</view>
+<!--{{item.content}}-->
+<view style="height:40px"></view>
+<view class="detail-nav">
+  <view class="line_nav"></view>
+  <button style="color:#69c3aa;width:100%;" bindtap="add" formType="submit">新增材质颜色
+  </button>
+
+</view>

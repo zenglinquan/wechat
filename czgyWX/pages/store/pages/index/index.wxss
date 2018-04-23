@@ -1,0 +1,163 @@
+page {
+  font-family: "微软雅黑";
+}
+
+/* 轮播图 */
+
+.swiper-item {
+  display: block;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+swiper {
+  width: 100%;
+  height: 300px;
+}
+
+swiper image {
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* 分类图标 */
+
+.workbench {
+  font-size: 20rpx;
+  background: #fff;
+  padding-bottom: 30rpx;
+  margin-bottom: 10rpx;
+  color: #333;
+  border: 1px solid #eee;
+}
+
+.workbench .list {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.workbench .items {
+  margin-top: 30rpx;
+  width: 100rpx;
+  flex: 1;
+  text-align: center;
+}
+
+.workbench .items image {
+  width: 32px;
+  height: 32px;
+}
+
+.workbench .items image.service-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.workbench .items text {
+  display: block;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 12px;
+}
+
+/*主商品区*/
+
+.container-goods {
+  background: white;
+}
+
+.container-goods .cap {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+}
+
+.container-goods .cap .caption {
+  text-align: center;
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 60rpx;
+  padding: 10rpx;
+}
+
+.main-goods {
+  border-top: 1px solid #eee;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-goods .single-goods {
+  margin: 2px;
+  border: 1px solid #eee;
+  width: 48%;
+  /* text-align: center; */
+}
+
+.main-goods image {
+  width: 100%;
+  height: 300rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.g {
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.main-goods .title {
+  color: #666;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 32rpx;
+}
+
+.main-goods .summary {
+  float: left;
+}
+
+.main-goods .summary text {
+  font-size: 28rpx;
+}
+
+.main-goods .summary .price {
+  color: red;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  color: #fff;
+  height: 80rpx;
+  padding: 10rpx 20rpx;
+  z-index: 100;
+  font-size: 12px;
+}
+
+.search-container input {
+  background: #fff;
+  color: #aaa;
+  padding: 5px 10rpx;
+  height: 40rpx;
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.search-container icon {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -20rpx;
+  right: 40rpx;
+}

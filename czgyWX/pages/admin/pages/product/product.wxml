@@ -1,0 +1,26 @@
+<!--orders.wxml-->
+<view class="search-container">
+  <input type="text" bindinput="searchInputChange"  placeholder="输入型号搜索"></input>
+  <icon bindtap="searchProduct" type="search" size="20" />
+</view>
+
+<view class="card clearfix" bindtap="details" wx:for="{{productDatas}}" wx:key="{{item.guid}}" data-id="{{item.guid}}">
+  <view class="tr">
+    <view class="td" style="width:20%">产品{{index+1}}</view>
+    <view class="td" style="width:30%">{{item.user.userName}}</view>
+    <view class="td">{{item.createDate}}</view>
+  </view>
+  <view class="line"></view>
+  <view class="ma">
+    <image class="s-left" style="width:20%;" src="{{item.imageSrc}}"></image>
+    <view style="margin-left:25%">
+    <view>产品型号：{{item.productVersion}}</view>
+    <view>生成价格：{{item.price}}</view>
+    <view>负责人：{{item.user.userName}}</view>
+    </view>
+  </view>
+</view>
+<view style="height:100px"></view>
+<view class="flex-buttom" ><button bindtap="addProduct" style="color:#69c3aa;width:100%;height:50px;margin-bottom:50px">新增商品</button></view>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;" bindtap="logout">退出登入</button>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;right:0" bindtap="opendManager">后台管理</button>

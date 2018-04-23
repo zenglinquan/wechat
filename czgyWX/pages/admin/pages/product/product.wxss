@@ -1,0 +1,152 @@
+/* orders.wxss */
+
+page {
+  background: #f2f1ee;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #69c3aa;
+  color: #fff;
+  height: 80rpx;
+  padding: 10rpx 20rpx;
+  z-index: 100;
+}
+
+.search-container input {
+  background: #fff;
+  color: #aaa;
+  padding: 5px 10rpx;
+  height: 40rpx;
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.search-container icon {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -20rpx;
+  right: 40rpx;
+}
+
+.card {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 4px 1px 1px #ccc;
+  margin: 8px;
+  position: relative;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #666;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.ma {
+  margin: 10px;
+  position:relative
+}
+
+image {
+  height: 64px;
+ 
+}
+
+.s-right {
+  float: right;
+}
+
+.s-left {
+  float: left;
+}
+
+.line {
+  border: 1px solid #eee;
+}
+
+.btn {
+  width: 20%;
+  height: 20%;
+  margin-right: 0px;
+}
+
+.flex-top {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 100%;
+}
+
+.flex-buttom {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.ma {
+  margin: 10px;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: center;
+}
+
+.td {
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+}
+
+.th {
+  width: 50%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.button_bottom {
+  color: #69c3aa;
+  height: 40px;
+  width: 50%;
+}
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 40px;
+}
+
+.button-background {
+  /*background-color: ;  Green */
+  color:#69c3aa;
+  line-height: 2.5;
+  height: 40px;
+  width: 50%
+}

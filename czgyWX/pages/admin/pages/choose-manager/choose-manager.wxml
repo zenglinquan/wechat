@@ -1,0 +1,7 @@
+  <view style="margin-top:5px"></view>
+  <view wx:for="{{authorizeData}}" wx:for-item="authority" wx:key="{{index}}">
+
+    <button style="color:#69c3aa;width:100%;" bindtap="opendManager" formType="submit" id="{{index}}">{{authority.authorityName}}</button>
+  
+  </view>
+    <button style="color:#69c3aa;width:100%;" bindtap="opendManager" formType="submit" id="6">后台管理</button>

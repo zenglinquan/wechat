@@ -1,0 +1,74 @@
+page {
+  font-family: "微软雅黑";
+}
+
+.item {
+  background-color: #fff;
+  width: 100%;
+  height: 112px;
+  border-bottom: 10px solid rgb(245, 246, 247);
+}
+
+.item_left_img {
+  float: left;
+  width: 30%;
+  height: 100px;
+  margin: 6px;
+}
+
+.item_middle {
+  display: flex;
+  flex-flow: column;
+  position:relative;
+  height:100%;
+}
+
+.item_middle_name {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  position:absolute;
+
+}
+
+.item_middle_price {
+  display: block;
+  color: red;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.item_right {
+  float: right;
+  display: flex;
+  justify-content: space-around;
+}
+
+.item_right_add {
+  background-color: red;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+.item_right_add text {
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding: 4px;
+}
+
+.item_right_del {
+  background-color: #999;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+.item_right_del text {
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding: 4px;
+}

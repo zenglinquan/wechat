@@ -1,0 +1,35 @@
+<!-- 头部部分 -->
+<view class="top">
+  <view class="top1">
+    <text>联系我们</text>
+  </view>
+  <view class="top2">
+    <text>2017-10-24  </text>
+    <text>工艺品商城专业版  </text>
+
+  </view>
+</view>
+
+<!-- 内容 -->
+<view class="content">
+  <view class="content_name">
+    <text>金华市美铂拉生活用品厂</text>
+  </view>
+  <view class="content_detail">
+    <text>电话：</text>
+    <text>13306790225</text>
+  </view>
+
+ 
+
+  <view class="content_detail">
+    <text>电子邮箱：</text>
+    <text>13306790225@163.com</text>
+  </view>
+
+  <view class="content_detail">
+    <text>地址：</text>
+    <text>浙江省金华市金东区孝顺镇低田工业区（金华市创泽饰品有限公司内）</text>
+
+  </view>
+</view>

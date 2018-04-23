@@ -1,0 +1,91 @@
+<view class="blank_address" wx:if="{{!isOwnAddress}}" bindtap="navigatToManagerAddress">
+  <image class="blank_address_position_image" src="../../images/position.png"></image>
+  <text>添加收货地址</text>
+  <image class="blank_address_position_image" style="float:right" src="../../images/icon-arrow.png"></image>
+</view>
+<!--  地址栏 -->
+<view class="pay_address_wrap" wx:if="{{isOwnAddress}}">
+  <image class="address_icon" src="../../images/position.png"></image>
+  <view class="pay_address">
+    <view class="pay_contact">
+      <span>收货人：{{addressInfo.consignee}}</span>
+      <span class="pay_number">{{addressInfo.telephone}}</span>
+    </view>
+    <view>
+      收货地址：{{addressInfo.addressInfo}}
+    </view>
+  </view>
+  <view bindtap="gotoAddress">
+    <image class="pay_address_sel" src="../../images/icon-arrow.png"></image>
+  </view>
+</view>
+
+<!-- 商品详情 -->
+<view class="pay_details" wx:for="{{StorePays}}" wx:key="{{index}}" wx:for-item="storePay">
+  <view>
+    <image class="pay_details_img" src="{{storePay.src}}"></image>
+  </view>
+  <view class="pay_details_category">
+    <text class="pay_details_category_text1">{{storePay.productName}}</text>
+    <text class="pay_details_category_text2">{{storePay.materialColorObject.color}}</text>
+  </view>
+  <view class="pay_details_right">
+    <view class="pay_details_price">
+      <p> ¥{{storePay.price}}</p>
+    </view>
+    <view class="pay_details_amount">
+      <text>x{{storePay.materialColorObject.number}}</text>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 底部部分 -->
+<view class="pay_bottom">
+
+
+  <view class="pay_bottom_all">
+
+    <view class="pay_bottom_item">
+      <view class="pay_bottom_item_left"><text>商品总数:</text></view>
+      <view class="pay_bottom_item_right"><text>{{quantity}}</text></view>
+    </view>
+
+    <!-- 
+    <view class="pay_bottom_item">
+      <view class="pay_bottom_item_left"><text>邮费:</text></view>
+      <view class="pay_bottom_item_right"><text>¥0</text></view>
+    </view>
+
+    <view class="pay_bottom_item">
+      <view class="pay_bottom_item_left"><text>优惠券优惠:</text></view>
+      <view class="pay_bottom_item_right"><text>¥0</text></view>
+    </view> -->
+
+    <view class="pay_bottom_item">
+      <view class="pay_bottom_item_left"><text>应付总金额:</text></view>
+      <view class="pay_bottom_item_right"><text>¥{{total}}</text></view>
+    </view>
+    <view class="pay_bottom_item">
+      <view class="pay_bottom_item_left"><text>买家留言:</text></view>
+      <view class="pay_bottom_item_right" style="color:#000"><input style='width:200px' placeholder="选填:对本次交易的说明和建议" name="detail" value="{{detail}}" bindinput="detailChange" /></view>
+    </view>
+
+    <view class="pay_btn" bindtap="commitOrder">
+      <view>
+        <text>提交订单</text>
+      </view>
+    </view>
+
+    <view class="pay_btn" bindtap="gotoIndex">
+      <view>
+        <text>返回首页</text>
+      </view>
+    </view>
+
+  </view>
+
+
+
+</view>

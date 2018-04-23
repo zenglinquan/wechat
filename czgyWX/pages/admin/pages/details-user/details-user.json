@@ -1,0 +1,47 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "用户",
+    "pages": [
+      "pages/user/user",
+      "pages/outstock/outstock",
+      "pages/instock/instock",
+      "pages/orders/orders",
+      "pages/sales/sales",
+      "pages/details-instock/details-instock",
+      "pages/test/test",
+      "pages/test1/test1",
+      "pages/login/login",
+      "pages/details-sales/details-sales",
+      "pages/details-outstock/details-outstock",
+      "pages/add-color/add-color",
+      "pages/add-role/add-role",
+      "pages/details-orders/details-orders",
+      "pages/details-user/details-user"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#69c3aa",
+      "navigationBarTitleText": "后台管理",
+      "navigationBarTextStyle": "white",
+      "backgroundColor": "#fbf9fe"
+    },
+    "tabBar": {
+      "color": "#929292",
+      "backgroundColor": "#ffffff",
+      "selectedColor": "#69C3AA",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/instock/instock",
+          "text": "库存",
+          "iconPath": "images/instock1.png",
+          "selectedIconPath": "images/instock.png"
+        },{
+          "pagePath": "pages/instock/instock",
+          "text": "库存",
+          "iconPath": "images/instock1.png",
+          "selectedIconPath": "images/instock.png"
+        }
+      ]
+    }
+  }

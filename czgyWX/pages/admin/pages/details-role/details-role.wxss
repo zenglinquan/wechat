@@ -1,0 +1,136 @@
+.container {
+  margin: 14px;
+}
+
+input {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-family: inherit;
+  border-bottom: 1px solid #eee;
+}
+
+.input-list {
+  padding: 0 20rpx;
+  margin: 20rpx 0;
+  background: #fff;
+  
+}
+
+.input-list .input-item {
+  padding: 20rpx;
+  line-height: 2;
+  display: flex;
+  font-size: 30rpx;
+  
+}
+.input-item text{
+  color:#333
+}
+.input-list .input-item:first-child {
+  border-top: 0;
+}
+
+.input-item-label {
+  display: block;
+  width: 5em;
+  color: #666;
+}
+
+.input-item-content {
+  color: #333;
+  flex: 1;
+}
+
+.touch-item {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom:1px solid #ddd ;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  padding: 10px;
+  line-height: 22px;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -90px;
+}
+
+.del {
+  background-color: orangered;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: 2;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.detail-nav {
+  display: flex;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100rpx;
+}
+
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+
+.button_bottom {
+  color: #69c3aa;
+  height: 40px;
+  width: 50%;
+}
+
+.over-button {
+  background-color:green;
+color:#fff;
+width:100%;
+height:40px;
+float:left;
+margin-top:10px;
+line-height:40px;
+
+}
+
+button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0px;
+  width: 20%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.button-background {
+  /*background-color: ;  Green */
+  color: #69c3aa;
+  line-height: 2.5;
+  height: 40px;
+  width: 50%;
+}

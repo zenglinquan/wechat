@@ -1,0 +1,40 @@
+<view class="item" wx:for="{{addressDatas}}" wx:for-item="address" wx:key="{{address.guid}}" data-id="{{address.guid}}">
+  <view class="item_content">
+
+    <view class="item_info">
+      <view class="item_name">{{address.consignee}}</view>
+      <view class="item_number">电话：{{address.telephone}}</view>
+    </view>
+
+    <view class="item_address">
+      <text> {{address.addressInfo}}</text>
+    </view>
+
+    <view class="item_all"  >
+      <view class="item_icon" bindtap="selectedDefaultAddress" data-guid="{{address.guid}}">
+        <image class="item_icon_img" src="{{address.selected? address_selected:address_blank}}"></image>
+        <text class="item_icon_text">默认地址</text>
+      </view>
+
+      <view class="item1">
+        <view class="item_editor" bindtap="editor" data-guid="{{address.guid}}">
+          <image class="item_editor_img" src="../../images/address_edit.png"></image>
+          <text class="item_editor_text">编辑</text>
+        </view>
+
+        <view class="item_del" bindtap="del" data-guid="{{address.guid}}">
+          <image class="item_del_img" src="../../images/shanchu.png"></image>
+          <text class="item_del_text">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="add" bindtap="addAdress">
+  <view class="addAddress">
+    <view>
+      <text>添加</text>
+    </view>
+  </view>
+</view>

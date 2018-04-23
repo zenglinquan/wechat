@@ -1,0 +1,20 @@
+<view class="section">
+    <!-- 左侧类型 -->
+    <scroll-view scroll-y="true" class="left">
+        <view wx:for="{{category}}" wx:key="typeId" data-id="{{item.categoryGuid}}" bindtap="changeCategory" class="{{item.categoryGuid == currCategoryId ? 'active' : ''}}">
+            {{item.categoryName}}
+        </view>
+    </scroll-view>
+
+    <!-- 右侧数据 -->
+    <scroll-view scroll-y="true" class="right">
+        <view class="typeTree">
+                <view class="brand">
+                    <navigator url="../spdetail/spdetail?productId={{storeProduct.guid}}" wx:for="{{storeProductTree[currCategoryId]}}" wx:for-item="storeProduct" wx:key="index" class="item">
+                        <image src="{{storeProduct.src}}?x-oss-process=image/resize,m_fill,w_75,h_75"></image>
+                        <text>{{storeProduct.productName}}</text>
+                    </navigator>
+                </view>
+        </view>
+    </scroll-view>
+</view>

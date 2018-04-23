@@ -1,0 +1,120 @@
+/* orders.wxss */
+page {
+  background: #F2F1EE;
+    
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #fff;
+  border-bottom: 6px solid rgb(245, 246, 247);
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 20%;
+  color: #666;
+}
+
+.on {
+  color: #69c3aa;
+  border-bottom: 5rpx solid #69c3aa;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f9f7f7;
+}
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #69c3aa;
+  color: #FFF;
+  height: 80rpx;
+  padding: 10rpx 20rpx;
+  z-index: 100;
+}
+.search-container input {
+  background: #FFF;
+  color: #AAA;
+  padding: 5px 10rpx;
+  height: 40rpx;
+  width: 100%;
+  border-radius: 8rpx;
+}
+.search-container icon {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -20rpx;
+  right: 40rpx;
+}
+
+
+.card {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 4px 1px 1px #cccccc;
+    margin: 8px;
+    position: relative;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+
+
+
+
+
+
+.line{
+  border: 1px dashed #eee;
+}
+
+
+.ma{
+  margin: 10px;
+}
+
+.tr {  
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: center;
+}
+.td {
+    width:50%;
+    justify-content: center;
+    text-align: center;
+}
+.th {
+  width: 50%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.flex-top{
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width:  100%
+}
+.flex-buttom{
+  position: fixed;
+  bottom: 0px;
+  width:100%;
+  
+}

@@ -1,0 +1,168 @@
+page {
+  font-family: "微软雅黑";
+  background-color: rgb(245, 246, 247)
+}
+
+/* 地址栏 */
+.blank_address{
+  padding:20px;
+  text-align:center;
+  background:#fff;
+
+}
+.blank_address_position_image{
+  vertical-align:middle;
+float:left;
+width:32px;
+height:32px;
+background-repeat:no-repeat;
+
+
+}
+.pay_address_wrap {
+  background-color: #fff;
+  padding: 10px 0;
+  position: relative;
+  padding-left: 15%;
+  padding-right: 12%;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+}
+
+.address_icon {
+  position: absolute;
+  top: 25px;
+  left: 8px;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+}
+
+.pay_address {
+  font-size: 14px;
+  width: 100%;
+}
+
+.pay_contact {
+  margin-bottom: 8px;
+}
+
+.pay_number {
+  margin-left: 5%;
+}
+
+.pay_address_sel {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: 8px;
+  top: 25px;
+  background-repeat: no-repeat;
+}
+
+/* 商品详情 */
+.pay_details{
+  background-color: #FFF;
+  width: 100%;
+  height: 100px;
+  margin-top: 2px
+}
+
+.pay_details .pay_details_img{
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+.pay_details_category{
+  display: flex;
+  flex-flow: column;
+  float: left;
+  width:40%;
+
+}
+
+.pay_details .pay_details_category_text1{
+    display: inline-block;
+    padding-top:12px; 
+    font-size: 12px;
+}
+.pay_details .pay_details_category_text2{
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.pay_details .pay_details_right{
+  display: flex;
+  flex-flow: column;
+  float: right;
+  margin: 10px;
+  padding-top: 26px;
+}
+.pay_details .pay_details_price{
+  color: red;
+  font-size: 12px;
+  width: 54px;
+  text-align:center;
+
+}
+.pay_details .pay_details_amount{
+  color: #8a8a8a;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* 底部部分 */
+
+.pay_bottom {
+  background-color: #fff;
+  margin-top: 2px;
+  width: 100%;
+  padding-bottom:10px;
+
+}
+
+.pay_bottom .pay_bottom_all {
+  margin: 4px 20px;
+}
+
+.pay_bottom .pay_bottom_item {
+  padding-top: 10px;
+  width: 100%;
+  height: 30px;
+  border-bottom:1px solid #ccc;
+
+}
+
+.pay_bottom .pay_bottom_item .pay_bottom_item_left {
+  float: left;
+  font-size: 14px;
+  color: #999;
+}
+
+.pay_bottom .pay_bottom_item .pay_bottom_item_right {
+  float: right;
+  font-size: 14px;
+  color: red;
+}
+
+/* 按钮 */
+
+.pay_btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(230, 67, 64);
+  margin: 4% 0;
+}
+
+.pay_btn text {
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  height: 10%;
+  line-height: 200%;
+}

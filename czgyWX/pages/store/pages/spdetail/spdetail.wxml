@@ -1,0 +1,78 @@
+<!-- 轮播图 -->
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" wx:key="{{index}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imageArray}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 商品介绍 -->
+<view class="goods_infor_top">
+  <view class="goods_title">
+    <text>{{StoreProduct.productName}}</text>
+     <view><text>{{StoreProduct.detail}}</text></view> 
+  </view>
+  <view class="goods_price">
+    <text>¥{{StoreProduct.price}}</text>
+    <!-- <text class="goods_old_price">¥269</text> -->
+  </view>
+   <view class="goods_deliver">
+    <!-- <view>库存:{{StoreProduct.materialColorObject[colorIndex].number}}</view> -->
+  </view> 
+</view>
+<!-- 商品属性 -->
+<view class="goods_detail">
+  <view class="goods_detail_title">选择商品属性</view>
+  <view>
+    <scroll-view scroll-y="true" style="height: 200rpx;">
+      <text wx:for="{{StoreProduct.materialColorObject}}" wx:key="item.id" data-colorIndex="{{index}}" class="bc_green mg {{colorIndex==index ? 'bc_red':''}}" bindtap="changeColor">{{item.color}}</text>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 购买数量 -->
+<view class="goods_detail">
+  <view class="goods_detail_title">购买数量</view>
+  <view class="goods_amount">
+    <!-- 主容器 -->
+    <view class="stepper">
+      <!-- 减号 -->
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+      <!-- 数值 -->
+      <input type="number" bindchange="numberChange" value="{{num}}" />
+      <!-- 加号 -->
+      <text class="normal" bindtap="bindPlus">+</text>
+    </view>
+  </view>
+</view>
+
+
+<!-- 底部通栏 -->
+<view class="goods_bottom"></view>
+
+<view class="goods_bottom_btn">
+
+  <view class="goods_all">
+
+    <view class="goods1" bindtap="jumpToCart">
+      <image class="goods_img1" src="../../images/car1.png"></image>
+      <text class="goods_word1">购物车</text>
+    </view>
+
+     <view class="goods1" bindtap="jumpToService">
+      <image class="goods_img1" src="../../images/car1.png"></image>
+      <text class="goods_word1">客服</text>
+    </view>
+    <view class="goods2" bindtap="insertFavorite">
+      <image class="goods_img2" src="{{isFavorite? fillImage : emptyImage}}"></image>
+      <text class="goods_word2">收藏</text>
+    </view>
+    <view class="goods_half_half red" bindtap="insertCart">加入购物车</view>
+    <view class="goods_half_half orange" bindtap="pay">立即购买</view>
+
+
+  </view>
+
+</view>

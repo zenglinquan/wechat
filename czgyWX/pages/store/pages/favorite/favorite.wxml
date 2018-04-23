@@ -1,0 +1,10 @@
+<view bindlongtap="deleteFavorite" bindtouchend="openSpdetail" class="item" wx:for="{{favoriteDatas}}" wx:key="index" data-guid="{{item.guid}}" data-index="{{index}}" data-productId="{{item.productId}}">
+  <view>
+    <image class="item_left_img" src="{{item.storeProduct.src}}"></image>
+  </view>
+  <view class="item_middle">
+      <text class="item_middle_name">{{item.storeProduct.productName}}</text>
+      <text class="item_middle_price">¥{{item.storeProduct.price}}</text>
+  </view>
+
+</view>

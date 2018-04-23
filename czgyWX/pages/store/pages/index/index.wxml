@@ -1,0 +1,91 @@
+<!-- 轮播 -->
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{newProduct}}" wx:key="{{item.guid}}">
+      <swiper-item>
+        <image src="{{item.pic1}}" bindtap="showDetail" data-id="{{item.guid}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 分类图标 -->
+<view class="workbench">
+  <view class="list">
+    <view class="items" bindtap="aboutus">
+      <image src="../../images/about_us.png"></image>
+      <text>关于我们</text>
+    </view>
+    <view class="items" bindtap="infoopen">
+      <image src="../../images/information_open.png"></image>
+      <text>信息公开</text>
+    </view>
+    <view class="items" bindtap="contactus">
+      <image src="../../images/contact_us.png"></image>
+      <text>联系我们</text>
+    </view>
+    <view class="items" bindtap="login">
+      <image src="../../images/background_manager.png"></image>
+      <text>跳转后台</text>
+    </view>
+  </view>
+</view>
+
+
+
+
+<!-- 畅销商品 -->
+<view class="container-goods">
+  <view class="cap"><text class="caption">畅销产品</text></view>
+
+  <view class="main-goods">
+    
+    <view class="single-goods" wx:for="{{newProduct}}" wx:key="{{item.guid}}" bindtap="showDetail" data-id="{{item.guid}}">
+      
+      <image class="avatar" src="{{item.pic1}}" mode="aspectFill" />
+      
+      <view class="g">
+    
+       <text class="title">{{item.productName}}</text> 
+    
+      </view>
+    
+      <view class="summary">
+        <text class="price">¥{{item.price}}元</text>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+<view class="container-goods">
+  <view class="cap"><text class="caption">所有产品</text></view>
+  <view class="search-container">
+    <input type="text" bindinput="searchStroeNameChange" placeholder="输入你想要的商品"></input>
+    <icon bindtap="searcStore" type="search" size="20" />
+  </view>
+  <view class="main-goods">
+    
+    <view class="single-goods" wx:for="{{storeProductData}}" wx:key="{{item.guid}}" bindtap="showDetail" data-id="{{item.guid}}">
+      
+      <image class="avatar" src="{{item.pic1}}" mode="aspectFill" />
+      
+      <view class="g">
+    
+       <text class="title">{{item.productName}}</text> 
+    
+      </view>
+    
+      <view class="summary">
+        <text class="price">¥{{item.price}}元</text>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+
+
+

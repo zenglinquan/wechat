@@ -1,0 +1,81 @@
+
+{
+  "pages": [
+        
+    "pages/store/pages/index/index",
+    "pages/store/pages/user/index",
+    "pages/store/pages/order/order",
+    "pages/store/pages/cart/cart",
+    "pages/store/pages/pay/pay",
+    "pages/store/pages/manageaddress/manageaddress",
+    "pages/store/pages/addaddress/addaddress",
+    "pages/store/pages/category/index",
+    "pages/store/pages/favorite/favorite",
+    "pages/store/pages/spdetail/spdetail",
+    "pages/store/pages/contactus/contactus",
+    "pages/store/pages/info-open/info-open",
+    "pages/store/pages/about-us/about-us",
+    
+"pages/admin/pages/orders/orders",
+    "pages/admin/pages/login/login",
+    "pages/admin/pages/orders-user/orders-user",
+    "pages/admin/pages/details-orders-user/details-orders-user",
+    "pages/admin/pages/details-product/details-product",
+    "pages/admin/pages/instock/instock",
+    "pages/admin/pages/outstock/outstock",
+    "pages/admin/pages/sales/sales",
+    "pages/admin/pages/product/product",
+    "pages/admin/pages/user/user",
+    "pages/admin/pages/choose-manager/choose-manager",
+    "pages/admin/pages/add-role/add-role",
+    "pages/admin/pages/details-role/details-role",
+    "pages/admin/pages/details-user/details-user",
+    "pages/admin/pages/details-instock/details-instock",
+    "pages/admin/pages/details-sales/details-sales",
+    "pages/admin/pages/details-outstock/details-outstock",
+    "pages/admin/pages/add-color/add-color",
+    "pages/admin/pages/details-orders/details-orders",
+    "pages/admin/pages/add-category/add-category"
+
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "white",
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "创泽商城",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F2f2f2"
+  },
+  "tabBar": {
+    "color": "#777",
+    "selectedColor": "#FF4D61",
+    "borderStyle": "black",
+    "backgroundColor": "#FAFAFA",
+    "list": [
+      {
+        "pagePath": "pages/store/pages/index/index",
+        "iconPath": "images/tabbar/mmhtab_icon_mmh_n@2x.png",
+        "selectedIconPath": "images/tabbar/mmhtab_icon_mmh_s@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/store/pages/category/index",
+        "iconPath": "images/tabbar/mmhtab_icon_fl_n@2x.png",
+        "selectedIconPath": "images/tabbar/mmhtab_icon_fl_s@2x.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/store/pages/cart/cart",
+        "iconPath": "images/tabbar/mmhtab_icon_gwc_n@2x.png",
+        "selectedIconPath": "images/tabbar/mmhtab_icon_gwc_s@2x.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/store/pages/user/index",
+        "iconPath": "images/tabbar/mmhtab_icon_me_n@2x.png",
+        "selectedIconPath": "images/tabbar/mmhtab_icon_me_s@2x.png",
+        "text": "我"
+      }
+    ]
+  }
+}

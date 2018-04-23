@@ -1,0 +1,72 @@
+<view style="height:55px"></view>
+<view class="flex-top">
+  <view class="search-container">
+    <input type="text" bindinput="searchInputChange" placeholder="输入单号搜索" value="{{orderCode}}"></input>
+    <icon bindtap="searchOrders" type="search" size="20" />
+  </view>
+</view>
+<view class="swiper-tab" wx:if="{{isOwnAuthority}}">
+  <view class="swiper-tab-list {{ordertype==0 ? 'on' : ''}}" data-ordertype="0" bindtap="switchOrderType" style="width:33.33%">全部</view>
+  <view class="swiper-tab-list {{ordertype==1 ? 'on' : ''}}" data-ordertype="1" bindtap="switchOrderType" style="width:33.33%">业务订单</view>
+  <view class="swiper-tab-list {{ordertype==2 ? 'on' : ''}}" data-ordertype="2" bindtap="switchOrderType" style="width:33.33%">商城订单</view>
+</view>
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未付款</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">未发货</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已发货</view>
+  <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">已完成</view>
+</view>
+<view class="card" bindtap="details" wx:for="{{ordersDatas}}" wx:key="{{item.id}}" data-text="{{item.guid}}">
+  <view class="tr">
+    <view class="td" style="width:80%">订单号 : {{item.orderCode}}</view>
+  </view>
+  <view style="height:2px;background-color:#eee"></view>
+  <view class="tr">
+    <view class="td" style="width:20%">订单{{index+1}}</view>
+    <view class="td" style="width:30%">{{item.user.userName}}</view>
+    <view class="td">{{item.createDate}}</view>
+  </view>
+  <view class="table">
+    <block>
+      <view class="tr">
+        <!-- <view class="td">产品名称</view> -->
+        <view class="td">型号</view>
+        <view class="td">数量</view>
+        <view class="td">金额</view>
+        <view class="td">订单状态</view>
+      </view>
+      <view class="tr">
+        <!-- <view class="td">{{item.productName}}</view> -->
+        <view class="td">{{item.productVersion}}</view>
+        <view class="td">{{item.quantity}}</view>
+        <view class="td">{{item.price}}</view>
+        <view class="td">{{item.orderStateInfo}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="line"></view>
+  <view class="ma">
+    <text>订购人</text>
+  </view>
+  <view class="table">
+    <block>
+      <view class="tr">
+        <view class="td">单位地址</view>
+        <view class="td">{{item.address}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">供货时间</view>
+        <view class="td">{{item.supplyDate}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view style="height:100px"></view>
+<view class="flex-buttom" style="margin-bottom:50px;">
+  <button style="color:#69c3aa;height:50px;width:50%;display:float;float:left" bindtap="addOrders">新增订购单</button>
+  <button style="color:#69c3aa;height:50px;width:50%;display:float;float:left" bindtap="addOrdersUser">订购人管理</button>
+</view>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;" bindtap="logout">退出登入</button>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;right:0" bindtap="opendManager">后台管理</button>

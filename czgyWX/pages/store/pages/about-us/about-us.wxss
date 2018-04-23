@@ -1,0 +1,64 @@
+page{
+  font-family: "微软雅黑";
+  background-color: #fff;
+}
+
+
+.item{
+  margin: 8px;
+  height: 108px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.left{
+  float: left;
+}
+
+.left_img{
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.right{
+}
+.right text{
+  font-size: 16px;
+  padding-left: 10px;
+  color: #333;
+}
+
+
+page{
+  font-family: "微软雅黑";
+}
+ /* 头部部分 */
+.top{
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.top1{
+  font-size: 14px;
+  color: #666;
+}
+.top2{
+  padding-top: 10px;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.content{
+  margin-top: 26px;
+  margin-left: 16px;
+}
+.content_name{
+    font-size: 16px;
+  color: #666;
+  font-weight: bold;
+}
+
+.content_detail{
+  font-size: 16px;
+  color: #666;
+  margin:10px;
+}

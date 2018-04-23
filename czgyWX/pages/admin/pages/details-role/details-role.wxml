@@ -1,0 +1,29 @@
+<view class="container">
+
+  <view  data-index="{{index}}">
+    <view class="content">
+      <view class="input-list">
+        <view class="input-item">
+          <text class="input-item-label">角色名称:</text>
+          <view class="input-item-content">
+            <input type="text" bindinput="roleNameInputChange" placeholder="请输入角色名称" value="{{roleData.roleName}}"></input>
+          </view>
+        </view>
+      </view>
+      <checkbox-group bindchange="checkboxChange">
+        <view wx:for-index="autId" style="width:40%;float:left" class="checkbox" wx:for="{{authorizeData}}" wx:for-item="authorize" wx:key="{{authorize.id}}">
+          <checkbox value="{{authorize.id}}" checked="{{authorize.checked}}"></checkbox>
+          {{authorize.authorityName}}
+        </view>
+      </checkbox-group>
+      
+    </view>
+  </view>
+</view>
+<!--{{item.content}}-->
+<view style="height:40px"></view>
+<view class="detail-nav">
+  <view class="line_nav"></view>
+  <button class="over-button" bindtap="over" data-id="{{index}}">更新角色</button>
+
+</view>

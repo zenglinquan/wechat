@@ -1,0 +1,37 @@
+<!--orders.wxml-->
+<view style="height:60px"></view>
+<view class="flex-top">
+  
+    <view class="search-container">
+      <input type="text" bindinput="searchInputChange" placeholder="输入型号搜索"></input>
+      <icon bindtap="searchUser" type="search" size="20" />
+    </view>
+  
+</view>
+<view class="card" bindtap="details" wx:for="{{userDatas}}"  wx:key="{{item.guid}}" data-text="{{item.guid}}">
+  <view class="ma">
+    <text>用户{{index+1}}</text>
+  </view>
+  <view class="line"></view>
+  <view class="table">
+    <block>
+      <view class="tr">
+        <view class="td">用户名称</view>
+        <view class="td">用户角色</view>
+      </view>
+      <view class="line"></view>
+      <view class="tr">
+        <view class="td">{{item.userName}}</view>
+        <view class="td">{{item.role.roleName}}</view>
+      </view>
+    </block>
+  </view>
+  
+</view>
+<view style="height:100px"></view>
+<view class="flex-buttom detail-nav" style="margin-bottom:50px">
+  <button class="button-background" bindtap="addUser">新增用户</button>
+  <button class="button-background" bindtap="addRole">新增角色</button>
+</view>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;" bindtap="logout">退出登入</button>
+<button class="flex-buttom" style="height:50px;color:#000;background-color:#69c3aa;width:50%;right:0" bindtap="opendManager">后台管理</button>
